@@ -15,7 +15,7 @@ Activity scripts are configured as integrations.
 That means they're at the *project level*, not at the level of an individual environment.
 While you can store the scripts in your Git repository for access, they have no effect there.
 
-To install a new activity script, use the [Platform.sh CLI](/development/cli/_index.md).
+To install a new activity script, use the [Platform.sh CLI](/administration/cli/_index.md).
 
 ```bash
 platform integration:add --type script --file ./my_script.js
@@ -77,7 +77,7 @@ Activity logs are available through their own CLI command, `platform integration
 Every time your activity script runs it will generate a new log entry, including the output from the script.
 Any output produced by `console.log` will be available in the activity log, and that is the recommended way to debug scripts.
 
-See the [activity log](/integrations/overview.md#debugging-integrations) documentation for further details.
+See the [activity log](../overview.md#debugging-integrations) documentation for further details.
 
 To get a more readable output of a variable you're trying to debug, you can make `JSON.stringify` use human-friendly formatting.
 
@@ -140,8 +140,6 @@ The `activity` variable is the same as the [webhook payload](/integrations/activ
 See the documentation there for details and a complete example.
 
 Several of the utility functions below work by pulling out common portions of the `activity` object.
-Most notably, scripts can be configured via [Project-level variables](../../development/variables/set-variables.md#create-project-variables)
-that can be accessed from the `activity` object.
 
 ### `project`
 

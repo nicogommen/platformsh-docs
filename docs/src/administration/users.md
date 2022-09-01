@@ -20,7 +20,7 @@ These control who has access to projects.
 Users can still see projects that they can't access if they're a member of an organization.
 See more on access control for [organizations](./organizations.md).
 
-To see all projects you have a role in, from the main console page
+To see all projects you have a role in, from the main Console page
 click **All projects&nbsp;<span aria-label="and then">></span> All projects**.
 
 ## Environment types
@@ -62,7 +62,7 @@ To add a user to a project or an environment, follow these steps:
 {{< codetabs >}}
 
 ---
-title=In the console
+title=In the Console
 file=none
 highlight=false
 ---
@@ -94,7 +94,7 @@ platform user:add user1@example.com -r admin
 
 The user has to create an account before they can contribute to the project.
 Once you add a user to a project, they receive an email with instructions.
-For SSH access changes to apply after you add a user to a project, you have to redeploy each environment by either clicking **Redeploy** in the console or running `platform redeploy`.
+For SSH access changes to apply after you add a user to a project, you have to redeploy each environment by either clicking **Redeploy** in the Console or running `platform redeploy`.
 
 ### Delete a user from a project
 
@@ -105,7 +105,7 @@ To delete a user from a project, follow these steps:
 {{< codetabs >}}
 
 ---
-title=In the console
+title=In the Console
 file=none
 highlight=false
 ---
@@ -147,7 +147,7 @@ To change user permissions, follow these steps:
 {{< codetabs >}}
 
 ---
-title=In the console
+title=In the Console
 file=none
 highlight=false
 ---
@@ -179,16 +179,6 @@ platform user:update user1@example.com -r production:v,development:c
 After you change a user's role for an environment type, you must trigger a redeploy each environment to propagate access changes. You can redeploy using the CLI command `platform redeploy`.
 
 {{< /codetabs >}}
-
-### Transfer project ownership
-
-You can transfer your plan ownership to a different [organization](./organizations.md) at anytime.
-You have to be an organization owner or have the [manage plan](./organizations.md#manage-your-organization-users) permission.
-
-1. Make the new organization owner a Project Admin for the project you want to transfer.
-2. Submit a [support ticket](https://console.platform.sh/-/users/~/tickets) from your organization account to ask for the transfer.
-
-Once the transfer is completed, the new organization can administer all project settings and billing and receives future invoices.
 
 ## Troubleshooting
 

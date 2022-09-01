@@ -18,7 +18,7 @@ To trigger a redeploy, follow these steps:
 {{< codetabs >}}
 
 ---
-title=In the console
+title=In the Console
 file=none
 highlight=false
 ---
@@ -106,7 +106,7 @@ The next build for each environment is likely to take longer as the cache rebuil
 In most cases, issues accessing a project are caused by missing permissions for a given user.
 For more information see how to [manage user permissions](../administration/users.md).
 
-If you are using the CLI, make sure that [you are authenticated](../development/cli/_index.md#2-authenticate).
+If you are using the CLI, make sure that [you are authenticated](../administration/cli/_index.md#2-authenticate).
 
 If you are using SSH, see how to [troubleshoot SSH access](../development/ssh/troubleshoot-ssh.md).
 
@@ -144,6 +144,18 @@ you might encounter an error like the following:
 ```
 
 If you see this, add the command to your path with a [`.environment` file script](./variables/set-variables.md#set-variables-via-script).
+
+## Missing commits
+
+If you push code to Platform.sh without the full Git history, sometimes commits are missing.
+This can happen if you're pushing code from an external CI/CD pipeline, such as a GitHub action.
+Such pipelines often do only shallow clones by default.
+
+In such cases, your build fails with an internal error.
+
+To avoid the error, make sure you do a full clone of the repository before pushing code.
+For example, for the [Checkout GitHub action](https://github.com/actions/checkout),
+set `fetch-depth: 0` to clone the full history.
 
 ## Large JSON file upload failing
 

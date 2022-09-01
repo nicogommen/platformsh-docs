@@ -77,7 +77,7 @@ Add a single domain to your Platform.sh project for `<YOUR_DOMAIN>`:
 {{< codetabs >}}
 
 ---
-title=In the console
+title=In the Console
 file=none
 highlight=false
 ---

@@ -16,7 +16,6 @@ A unique opaque value to identify the activity.
 
 ### `project`
 
-The Project ID for which the activity was triggered.
 Use this value if you want to have multiple projects POST to the same URL.
 
 ### `type`
@@ -28,12 +27,13 @@ Its value is one of:
 * `project.create`: A project has been created.
   Although it will appear in the activity feed exactly once,
   it will not be sent via a webhook as it will always happen before a webhook can be configured.
-* `project.domain.create`: A new domain has been added to the project.
-* `project.domain.delete`: A domain associated with the project has been removed.
-* `project.domain.update`: A domain associated with the project has been updated, including modifying it's SSL certificate.
 * `project.variable.create`: A new project variable has been created.
 * `project.variable.delete`: A project variable has been deleted.
 * `project.variable.update`: A project variable has been modified.
+---
+* `environment.domain.create`: A new domain has been associated with the environment.
+* `environment.domain.delete`: A domain associated with the environment has been removed.
+* `environment.domain.update`: A domain associated with the environment has been updated, such as having its SSL certificate modified.
 ---
 * `environment.access.add`: A new user has been given access to the environment.
 * `environment.access.remove`: A user has been removed from the environment.
@@ -47,22 +47,22 @@ Its value is one of:
 * `environment.backup.delete`: A user deleted a [backup](/administration/backup-and-restore.md)
 ---
 * `environment.push`: A user has pushed code to a branch, either existing or new.
-* `environment.branch`: A new branch has been created via the management console.
+* `environment.branch`: A new branch has been created via the Console.
   (A branch created via a push will show up only as an `environment.push`.)
 * `environment.activate`: A branch has been "activated", and an environment created for it.
 * `environment.initialize`: The default branch of the project has just been initialized with its first commit.
 * `environment.deactivate`: A branch has been "deactivated". The code is still there, but the environment was destroyed.
 * `environment.synchronize`: An environment has had its data and/or code re-copied from its parent environment.
-* `environment.merge`: A branch was merged through the management console or Platform.sh API.
+* `environment.merge`: A branch was merged through the Console or Platform.sh API.
   A basic Git merge will not trigger this event.
 * `environment.redeploy`: An environment was redeployed.
 * `environment.delete`: A branch was deleted.
 ---
-* `environment.route.create`: A new route has been created through the management console.
+* `environment.route.create`: A new route has been created through the Console.
   This will not fire for route edits made to the `routes.yaml` file directly.
-* `environment.route.delete`: A route has been deleted through the management console.
+* `environment.route.delete`: A route has been deleted through the Console.
   This will not fire for route edits made to the `routes.yaml` file directly.
-* `environment.route.update`: A route has been modified through the management console.
+* `environment.route.update`: A route has been modified through the Console.
   This will not fire for route edits made to the `routes.yaml` file directly.
 ---
 * `environment.variable.create`: A new variable has been created.
@@ -127,13 +127,13 @@ The most notable properties of this key are
 
 The Platform.sh user that triggered the activity.
 
-### `deployment`
+### `payload.deployment`
 
 This large block details all information about all services in the environment.
 That includes the resulting configuration objects derived from [`routes.yaml`](../../define-routes/_index.md),
 [`services.yaml`](../../add-services/_index.md), and [your app configuration](../../create-apps/_index.md).
 
-Most notably, the `deployment.routes` object's keys are all of the URLs made available by the environment.
+Most notably, the `payload.deployment.routes` object's keys are all of the URLs made available by the environment.
 Note that some will be redirects.
 To find those that are live URLs filter to those objects whose `type` property is `upstream`.
 
