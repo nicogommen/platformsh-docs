@@ -184,7 +184,7 @@ To get the IP addresses of your internal domain, run `dig +short $(platform envi
 {{< codetabs >}}
 
 ---
-title=On macOS and linux
+title=On macOS and Linux
 file=none
 highlight=false
 ---
