@@ -38,7 +38,7 @@ There's a [detailed thread](https://serverfault.com/questions/613829/why-cant-a-
 
 ## Where should the CNAME point to?
 
-You can access the CNAME target from your terminal by using the [CLI](development/cli/_index.md) command:
+You can access the CNAME target from your terminal by using the [CLI](../../administration/cli/_index.md) command:
 
 ```bash
 platform environment:info edge_hostname
