@@ -141,7 +141,7 @@ The main ones are:
 * **Downstream database synchronization**: Getting it from the remote to the local.
 * **Downstream file storage synchronization**: Getting it from the remote to the local.
 
-To help you with that, Platform.sh provides a CLI that you can [install](../../development/cli/_index.md).
+To help you with that, Platform.sh provides a CLI that you can [install](../../administration/cli/_index.md).
 
 #### Database and storage synchronization
 
@@ -157,7 +157,7 @@ The third tells to eZ Launchpad to import those data in the Docker stack.
 {{< note >}}
 
 The storage (images and files) synchronization is optional.
-Ibexa DXP provides a [placeholder generator mechanism](https://doc.ibexa.co/en/latest/guide/images/images/#generating-placeholder-images)
+Ibexa DXP provides a [placeholder generator mechanism](https://doc.ibexa.co/en/latest/content_management/images/images/#generating-placeholder-images)
 that allows you to forget about the real images for your local.
 
 {{< /note >}}

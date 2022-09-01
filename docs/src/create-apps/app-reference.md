@@ -135,6 +135,10 @@ So if your _plan storage size_ is 5 GB, you can, for example, assign it in one o
 If you exceed the total space available, you receive an error on pushing your code.
 You need to either increase your plan's storage or decrease the `disk` values you've assigned.
 
+### Downsize a disk
+
+{{% disk-downsize type="app" %}}
+
 ## Mounts
 
 Mounts define directories that are writable after the build is complete.
@@ -629,7 +633,7 @@ The following table shows the properties for each job:
 | Name               | Type      | Required | Description |
 | ------------------ | --------- | -------- | ----------- |
 | `start`            | `string`  | Yes      | The command that's run. It's run in [Dash](https://en.wikipedia.org/wiki/Almquist_shell). |
-| `stop`             | `string`  | No       | The command that's issued to give the cron command a chance to shutdown gracefully, such as to finish an active item in a list of tasks. Issued when a cron task is interrupted by a user through the CLI or management console. If not specified, a `SIGTERM` signal is sent to the process. |
+| `stop`             | `string`  | No       | The command that's issued to give the cron command a chance to shutdown gracefully, such as to finish an active item in a list of tasks. Issued when a cron task is interrupted by a user through the CLI or Console. If not specified, a `SIGTERM` signal is sent to the process. |
 
 ```yaml {location=".platform.app.yaml"}
 crons:
@@ -709,17 +713,15 @@ While it's useful for environments under active development to have scheduled ta
 unused environments don't need to run cron jobs.
 To minimize unnecessary resource use,
 crons on environments with no deployments are paused.
-The following table shows how long without a deployment an environment goes before crons are paused:
 
-| Plan             | Affected environments | Time before crons paused |
-| ---------------- | --------------------- | ------------------------ |
-| Development      | All                   | 4 days                   |
-| Live (Standard+) | Non-Production        | 14 days                  |
+This affects all environments that aren't live environments.
+This means all environments on Development plans
+and all non-Production environments on higher plans.
 
-Environments with deployments within the given time have crons with the status `running`.
-If there haven't been any deployments within the given time, the status is `paused`.
+Such environments with deployments within 14 days have crons with the status `running`.
+If there haven't been any deployments within 14 days, the status is `paused`.
 
-You can see the status in the management console
+You can see the status in the Console
 or using the CLI by running `platform environment:info` and looking under `deployment_state`.
 
 #### Restarting paused crons
@@ -732,12 +734,12 @@ To restart crons without changing anything:
 {{< codetabs >}}
 
 ---
-title=In the console
+title=In the Console
 file=none
 highlight=false
 ---
 
-1. In the console, navigate to your project.
+1. In the Console, navigate to your project.
 1. Open the environment where you'd like the crons to run.
 1. Click `Redeploy` next to the cron status of `Paused`.
 

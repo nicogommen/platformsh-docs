@@ -58,7 +58,7 @@ and turn off those on by default with the `disabled_extensions` key.
 | `ftp`             |       |       |       | Def   | Def   | Def   | Def   | Def   | Def   | Def   |
 | `gd`              | Def   | Def   | Def   | Def   | Def   | Def   | Def   | Def   | Def   | Def   |
 | `gearman`         | Avail | Avail | Avail |       |       |       |       |       |       |       |
-| `geoip`           | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail |       |       |
+| `geoip`           | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail |
 | `gettext`         |       |       |       | Def   | Def   | Def   | Def   | Def   | Def   | Def   |
 | `gmp`             | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail |
 | `http`            | Avail | Avail |       |       |       |       | Avail | Avail | Avail | Avail |
@@ -75,7 +75,7 @@ and turn off those on by default with the `disabled_extensions` key.
 | `mbstring`        |       |       |       | Def   | Def   | Def   | Def   | Def   | Def   | Def   |
 | `mcrypt`          | Avail | Avail | Avail | Avail | Avail |       |       |       |       |       |
 | `memcache`        | Avail | Avail | Avail |       |       |       |       |       |       |       |
-| `memcached`       | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail |       |
+| `memcached`       | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail | Avail |
 | `mongo`           | Avail | Avail | Avail |       |       |       |       |       |       |       |
 | `mongodb`         |       |       |       | Avail | Avail | Avail | Avail | Avail | Avail | Avail |
 | `msgpack`         |       |       | Avail | Avail | Avail | Avail | Avail | Avail | Avail |       |
