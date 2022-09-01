@@ -35,22 +35,22 @@ ensure that the code is up to date in both your `staging` and `production` branc
 as those are mirrored to the Dedicated instances.
 Also ensure that the data on the production instance is up to date and ready to launch.
 
-## 3. (Optional) Obtain a 3rd party TLS certificate
+## 3. Optional: Obtain a third-party TLS certificate
 
 Platform.sh automatically provides TLS certificates for all sites issued by [Let's Encrypt](https://letsencrypt.org/) at no charge.
 [In most cases](../define-routes/https.md#limits), this is sufficient and no further action is necessary.
 However, if you want to use a [third-party TLS certificate](./steps/tls.md) to encrypt your production site,
-you can obtain one from any 3rd party TLS issuers.
-Platform.sh doesn't charge for using a 3rd party TLS certificate, although the issuer may.
+you can obtain one from any third party TLS issuers.
+Platform.sh doesn't charge for using a third party TLS certificate, although the issuer may.
 
 Platform.sh supports all kinds of certificates including domain-validated certificates,
 extended validation (EV) certificates, high-assurance certificates and wildcard certificates.
 The use of HA or EV certificates is the main reason why you may wish to use a third party issuer rather than the default certificate.
 If you use wildcard routes, you need a custom certificate.
 
-If you do wish to use a 3rd party certificate, ensure it's purchased and active before going live.
+If you do wish to use a third party certificate, ensure it's purchased and active before going live.
 
-## 4. (Optional) Configure your Content Delivery Network (CDN)
+## 4. Optional: Configure your CDN
 
 If you are using a CDN, either one included with an Enterprise plan or one you provide for a self-service Grid project,
 ensure that your CDN account is registered and configured in advance.
