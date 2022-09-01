@@ -17,7 +17,7 @@ You need:
 - A project plan size of **Standard** or larger.
 - A domain and have access to its settings on the registrar's website.
 - A registrar that allows CNAME records on Apex domains or [one of the alternatives](./steps/dns.md).
-- (Optional) Have the [CLI](../development/cli/_index.md) installed locally.
+- (Optional) Have the [CLI](/development/cli/_index.md) installed locally.
 
 ## 1. Configure your DNS zone
 
@@ -33,7 +33,7 @@ highlight=false
 
 1. Sign in to your registrar's management system to configure your domain.
 2. Set the time to live (TTL) on your domain to the lowest possible value to minimize transition time.
-3. Get the CNAME target by running the following [CLI](../development/cli/_index.md) command: `platform environment:info edge_hostname`
+3. Get the CNAME target by running the following [CLI](/development/cli/_index.md) command: `platform environment:info edge_hostname`
 4. Add a CNAME record from the `www` subdomain (`www.<YOUR_DOMAIN>`) to the value of the CNAME target.
 5. Add a CNAME/ANAME/ALIAS from your apex domain (`<YOUR_DOMAIN>`) to the value of the CNAME target.
   Not all registrars allow these kinds of records.
