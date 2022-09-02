@@ -20,7 +20,7 @@ You need to:
 
 - Have a project that’s ready to be live.
 - Have a domain and have access to its settings on the registrar’s website.
-- (Optional) Have the [CLI](/development/cli/_index.md) installed locally.
+- (Optional) Have the [CLI](../../administration/cli/_index.md) installed locally.
 - Make sure that your registrar allows [CNAMEs on Apex domains or one of the alternatives](../steps/dns.md).
 
 ## 1. Change your plan to a production plan
@@ -62,7 +62,7 @@ highlight=false
 
 1. Sign in to your registrar's management system to configure your domain.
 2. Set the time to live (TTL) on your domain to the lowest possible value to minimize transition time.
-3. Get the CNAME target by running the [CLI](/development/cli/_index.md) command `platform environment:info edge_hostname`.
+3. Get the CNAME target by running the [CLI](../../administration/cli/_index.md) command `platform environment:info edge_hostname`.
 4. Add a CNAME record from the `www` subdomain (`www.<YOUR_DOMAIN>`) to the value of the CNAME target.
   If you have multiple domains you want to be served by the same application you need to add a CNAME record for each of them.
   If you are planning to host multiple subdomains on different projects,
